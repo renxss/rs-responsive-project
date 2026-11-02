@@ -110,6 +110,27 @@ main {
     font-size: 36px;
 }
 
+.castle-img {
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.osaka-summary {
+    grid-column: span 2;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+    align-self: center;
+}
+
+@media (max-width: 768px) {
+  .castle-img,
+  .osaka-summary {
+    grid-column: 1 / -1;
+  }
+}
+
 footer {
     font-family: "Poppins", sans-serif;
     display: flex;
