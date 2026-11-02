@@ -14,18 +14,38 @@ header{
 }
 
 
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 1.5;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.5;
+}
+
 
 h3 {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
-  line-height: 72px;
+  line-height: 1.5;
 }
-h1 {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 96px;
-  line-height: 144px;
+
+header a {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
