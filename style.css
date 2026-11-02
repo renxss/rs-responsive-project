@@ -1,3 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -10,9 +23,14 @@ header{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 200px 20px;
+    padding: 40px 20px;
 }
 
 
@@ -20,7 +38,7 @@ header h1 {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 96px;
+  font-size: clamp(36px, 8vw, 96px);
   line-height: 1.5;
   color: #ffffff;
   background-color: rgba(0, 102, 255, 0.4);
@@ -32,7 +50,7 @@ header h2 {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 30px;
+  font-size: clamp(18px, 4vw, 30px);
   line-height: 1;
   margin: 0;
   color: #ffffff;
@@ -46,13 +64,13 @@ header h3 {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 48px;
+  font-size: clamp(24px, 5vw, 48px);
   line-height: 1.5;
 }
 
 .TRAVEL {
   color: #ffffff;
-  margin-top: 150px;
+  margin: 0;
 }
 
 header a {
@@ -82,15 +100,6 @@ header a {
     background-color: rgba(0, 102, 255, 0.7);
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-
-
-
 main {
     font-family: "Poppins", sans-serif;
     max-width: 1200px;
@@ -102,6 +111,7 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    align-items: center;
 }
 
 .grid h2 {
@@ -124,11 +134,44 @@ main {
     align-self: center;
 }
 
-@media (max-width: 768px) {
-  .castle-img,
-  .osaka-summary {
-    grid-column: 1 / -1;
-  }
+.cards-section {
+    margin-top: 60px;
+}
+
+.cards-section h2 {
+    text-align: center;
+    font-size: 36px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #0066ff;
+}
+
+.card p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
 }
 
 footer {
@@ -136,6 +179,7 @@ footer {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    gap: 20px;
     padding: 40px 20px;
     text-align: center;
 }
@@ -174,29 +218,43 @@ footer p {
 }
 
 
+/* Tablets (iPad landscape and smaller laptops) */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .osaka-summary {
+    grid-column: auto;
+  }
+}
+
+/* Small tablets and large phones (iPad portrait, iPhone landscape) */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 48px;
+  .grid {
+    grid-template-columns: 1fr;
   }
-  header h2 {
-    font-size: 24px;
+  .castle-img,
+  .osaka-summary {
+    grid-column: 1 / -1;
   }
-  header h3 {
-    font-size: 36px;
-  }
-}
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 36px;
-  }
-  header h2 {
-    font-size: 18px;
-  }
-  header h3 {
-    font-size: 24px;
+  footer {
+    flex-direction: column;
+    align-items: center;
   }
 }
+
+/* Phones (iPhone portrait) */
 @media (max-width: 480px) {
+  main {
+    padding: 20px 15px;
+  }
+  .grid h2,
+  .cards-section h2 {
+    font-size: 28px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
   .learn-more {
     padding: 10px 20px;
     font-size: 12px;
