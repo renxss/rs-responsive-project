@@ -182,6 +182,32 @@ main {
     line-height: 1.7;
 }
 
+.card iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: rgba(0, 102, 255, 0.8);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.card-link:hover {
+    background-color: rgba(0, 102, 255, 1);
+}
+
 footer {
     font-family: "Poppins", sans-serif;
     display: flex;
