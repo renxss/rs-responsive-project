@@ -56,6 +56,8 @@ h3 {
 header a {
     font-family: "Poppins", sans-serif;
     font-style: normal;
+    margin-top: 30px;
+    display: inline-block;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.5;
